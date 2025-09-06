@@ -11,7 +11,7 @@ export type TransactionType = {
     category?: string,
     subcategory?: string,
     additionalInfo?: string,
-    iconColor: string,
+    iconColor?: string,
     budgetLeft?: number,
     transaction?: TransactionType
     details?: Array<TransactionItemType>

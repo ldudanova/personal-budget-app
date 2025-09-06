@@ -1,0 +1,148 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "date": "2025-09-06T15:30:00.000Z",
+      "name": "Молоко",
+      "amount": 3.5,
+      "currency": "€",
+      "type": "expense",
+      "category": "Продукты",
+      "details": [
+        {
+          "name": "Milk",
+          "category": "молоко",
+          "qty": 1,
+          "pricePerUnit": 1.25,
+          "priceTotal": 1.25,
+          "discount": 0
+        },
+        {
+          "name": "Grated сыр",
+          "category": "сыр",
+          "qty": 6,
+          "pricePerUnit": 2.09,
+          "priceTotal": 12.54,
+          "discount": 4.18
+        },
+        {
+          "name": "Butter croissant",
+          "category": "вкусняшки",
+          "qty": 3,
+          "pricePerUnit": 0.69,
+          "priceTotal": 0.27,
+          "discount": 1.80
+        },
+        {
+          "name": "Mozzarella",
+          "category": "сыр",
+          "qty": 1,
+          "pricePerUnit": 1.29,
+          "priceTotal": 1.29,
+          "discount": 0
+        },
+        {
+          "name": "Что-то очень-очень очень-очень вкусное",
+          "category": "вкусняшки",
+          "qty": 1,
+          "pricePerUnit": 120,
+          "priceTotal": 120,
+          "discount": 0
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "date": "2025-09-05T10:40:00.000Z",
+      "name": "Спектакль The Dead",
+      "amount": 35,
+      "currency": "€",
+      "type": "expense",
+      "category": "Развлечения"
+    },
+    {
+      "id": 1,
+      "date": "2025-09-05T12:10:00.000Z",
+      "name": "Зарплата",
+      "amount": 4000,
+      "currency": "€",
+      "type": "income",
+      "category": "зарплата"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Продукты",
+      "icon": "",
+      "color": "",
+      "budgetLimit": 400,
+      "subcategories": [
+        {
+          "id": 1,
+          "name": "мясо",
+          "color": ""
+        },
+        {
+          "id": 2,
+          "name": "вкусняшки",
+          "color": ""
+        },
+        {
+          "id": 3,
+          "name": "молоко",
+          "color": ""
+        },
+        {
+          "id": 4,
+          "name": "сыр",
+          "color": ""
+        },
+        {
+          "id": 5,
+          "name": "овощи",
+          "color": ""
+        },
+        {
+          "id": 6,
+          "name": "фрукты",
+          "color": ""
+        },
+        {
+          "id": 7,
+          "name": "алкоголь",
+          "color": ""
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Развлечения",
+      "icon": "",
+      "color": "",
+      "budgetLimit": 200,
+      "subcategories": [
+        {
+          "id": 1,
+          "name": "Кафе и рестораны",
+          "color": ""
+        },
+        {
+          "id": 2,
+          "name": "Бары и пабы",
+          "color": ""
+        },
+        {
+          "id": 3,
+          "name": "Концерты, театры и музеи",
+          "color": ""
+        },
+        {
+          "id": 4,
+          "name": "Мероприятия",
+          "color": ""
+        }
+      ]
+    }
+  ]
+}

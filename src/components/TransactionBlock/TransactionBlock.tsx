@@ -1,9 +1,12 @@
 import Card from "../Cards/Card.tsx";
 import type {TranArr, TransactionType} from "../../types/TransactionType.ts";
 import {TransactionRow} from "./TransactionRow.tsx";
+import {useEffect} from "react";
+import {useAppDispatch, useAppSelector} from "../../store/store.ts";
+import {fetchTransactions} from "../../store/transactionsSlice.ts";
 
 export default function TransactionBlock() {
-    const transactionsArr: Array<TranArr> = [
+/*    const transactionsArr: Array<TranArr> = [
         {
             id: 1,
             date: "4 Sep, Today",
@@ -184,8 +187,19 @@ export default function TransactionBlock() {
                 },
             ]
         }
-    ];
+    ];*/
 
+    const dispatch = useAppDispatch();
+    const { tranArr, loading, error } = useAppSelector(state => state.transactions);
+
+    useEffect(() => {
+        dispatch(fetchTransactions());
+    }, [dispatch]);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error}</p>;
+
+    console.log(tranArr);
 
     return (
         <>
@@ -195,7 +209,7 @@ export default function TransactionBlock() {
             <div className="h-[calc(100vh-250px)] overflow-hidden relative">
                 <div
                     className="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-violet-400 scrollbar-track-gray-100 rounded-lg relative pb-8 pr-4">
-                    {transactionsArr.map((tran: TranArr) => (
+                    {tranArr.map((tran: TranArr) => (
                         <div className={"mb-4"} key={tran.id}>
                             <div key={tran.id}
                                  className="sticky top-0 z-10 bg-gray-100 pl-2 pr-4 flex justify-between">

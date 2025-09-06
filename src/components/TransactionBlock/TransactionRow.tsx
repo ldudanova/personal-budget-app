@@ -66,19 +66,18 @@ export function TransactionRow(props: Props) {
                         </div>*/}
                     </div>
                 </div>
-                {transaction.details
+                {!!transaction.details && transaction.details.length > 0
                     && (
                         <div className="text-xs text-gray-300 ml-10">Подробнее</div>
                     )}
             </summary>
-            {transaction.details
+            {!!transaction.details && transaction.details.length > 0
                 && (
                     <div className="pl-3 pt-2">
                         {/*TODO: подумать как лучше оформить скролл таблицы */}
                         <div className="h-[calc(100vh-400px)] overflow-hidden relative">
                             <div className="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-violet-400 scrollbar-track-gray-100 rounded-lg relative">
                                 <TransactionRowDetailsTable details={transaction.details}/>
-
                             </div>
                         </div>
                     </div>
