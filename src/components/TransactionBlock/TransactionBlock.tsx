@@ -110,9 +110,8 @@ export default function TransactionBlock() {
             <h2 className="text-2xl font-bold font-sans mb-4 px-2">
                 Transactions
             </h2>
-            <div className="h-[calc(100vh-300px)] overflow-hidden relative">
-                <div
-                    className="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-violet-400 scrollbar-track-gray-100 rounded-lg relative pb-8 pr-4">
+            <div className="h-[calc(100vh-250px)] overflow-hidden relative">
+                <div className="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-violet-400 scrollbar-track-gray-100 rounded-lg relative pb-8 pr-4">
                     {transactionsArr.map((tran: TranArr) => (
                         <div className={"mb-4"} key={tran.id}>
                             <div key={tran.id}
