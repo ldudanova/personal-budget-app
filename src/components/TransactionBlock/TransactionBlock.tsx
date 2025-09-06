@@ -20,6 +20,88 @@ export default function TransactionBlock() {
                     type: "expense",
                     iconColor: "violet-400",
                     budgetLeft: 23,
+                    details: [
+                        {
+                            name: "Milk",
+                            category: "milk",
+                            qty: 1,
+                            pricePerUnit: 1.25,
+                            priceTotal: 1.25,
+                            discount: 0,
+                        },
+                        {
+                            name: "Grated cheese",
+                            category: "cheese",
+                            qty: 6,
+                            pricePerUnit: 2.09,
+                            priceTotal: 12.54,
+                            discount: 4.18,
+                        },
+                        {
+                            name: "Butter croissant",
+                            category: "вкусняшки",
+                            qty: 3,
+                            pricePerUnit: 0.69,
+                            priceTotal: 0.27,
+                            discount: 1.80,
+                        },
+                        {
+                            name: "Mozzarella",
+                            category: "cheese",
+                            qty: 1,
+                            pricePerUnit: 1.29,
+                            priceTotal: 1.29,
+                            discount: 0,
+                        },
+                        {
+                            name: "Что-то очень-очень очень-очень вкусное",
+                            category: "вкусняшки",
+                            qty: 1,
+                            pricePerUnit: 120,
+                            priceTotal: 120,
+                            discount: 0,
+                        },
+                        {
+                            name: "Milk",
+                            category: "milk",
+                            qty: 1,
+                            pricePerUnit: 1.25,
+                            priceTotal: 1.25,
+                            discount: 0,
+                        },
+                        {
+                            name: "Grated cheese",
+                            category: "cheese",
+                            qty: 6,
+                            pricePerUnit: 2.09,
+                            priceTotal: 12.54,
+                            discount: 4.18,
+                        },
+                        {
+                            name: "Butter croissant",
+                            category: "вкусняшки",
+                            qty: 3,
+                            pricePerUnit: 0.69,
+                            priceTotal: 0.27,
+                            discount: 1.80,
+                        },
+                        {
+                            name: "Mozzarella",
+                            category: "cheese",
+                            qty: 1,
+                            pricePerUnit: 1.29,
+                            priceTotal: 1.29,
+                            discount: 0,
+                        },
+                        {
+                            name: "Что-то очень-очень очень-очень вкусное",
+                            category: "вкусняшки",
+                            qty: 1,
+                            pricePerUnit: 120,
+                            priceTotal: 120,
+                            discount: 0,
+                        },
+                    ]
                 },
                 {
                     id: 2,
@@ -46,7 +128,7 @@ export default function TransactionBlock() {
             date: "3 Sep, Wednesday",
             totalExpense: 56,
             currencyExpense: "€",
-            totalIncome: 200,
+            totalIncome: 2000,
             currencyIncome: "€",
             transactions: [
                 {
@@ -111,11 +193,12 @@ export default function TransactionBlock() {
                 Transactions
             </h2>
             <div className="h-[calc(100vh-250px)] overflow-hidden relative">
-                <div className="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-violet-400 scrollbar-track-gray-100 rounded-lg relative pb-8 pr-4">
+                <div
+                    className="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-violet-400 scrollbar-track-gray-100 rounded-lg relative pb-8 pr-4">
                     {transactionsArr.map((tran: TranArr) => (
                         <div className={"mb-4"} key={tran.id}>
                             <div key={tran.id}
-                                 className="sticky top-0 z-10 bg-gray-100 px-2 flex justify-between">
+                                 className="sticky top-0 z-10 bg-gray-100 pl-2 pr-4 flex justify-between">
                                 <div className="pb-2">{tran.date}</div>
                                 <div className="flex justify-between">
                                     {

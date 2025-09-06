@@ -165,7 +165,7 @@ export default function ExpensesByCategoriesChart() {
             const text = `€${total}`;
 
             // Настройки текста
-            ctx.font = "bold 18px Arial";
+            ctx.font = "bold 2em Arial"; //TODO: сделать размер текста адаптивным
             ctx.fillStyle = "#111";
             ctx.textAlign = "center";
             ctx.textBaseline = "middle";
@@ -174,8 +174,6 @@ export default function ExpensesByCategoriesChart() {
             ctx.restore();
         },
     };
-
-
 
     return (
         <Doughnut data={data}
