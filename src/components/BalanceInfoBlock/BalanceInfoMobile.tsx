@@ -1,4 +1,4 @@
-import Card from "../Cards/Card.tsx";
+import Card from "../../UI/Cards/Card.tsx";
 import type {BalanceInfoType} from "../../types/BalanceInfoType.ts";
 
 type Props = {

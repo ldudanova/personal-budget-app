@@ -144,5 +144,63 @@
         }
       ]
     }
+  ],
+  "categoriesSpentTotal": [
+    {
+      "id": 1,
+      "name": "Продукты",
+      "currency": "€",
+      "amount": 400,
+      "color": "rgb(75,192,102)"
+    },
+    {
+      "id": 2,
+      "name": "Аренда",
+      "currency": "€",
+      "amount": 1827,
+      "color": "rgba(153, 102, 255, 1)"
+    },
+    {
+      "id": 3,
+      "name": "Cafe",
+      "currency": "€",
+      "amount": 200,
+      "color": "rgb(243,173,115)"
+    },
+    {
+      "id": 4,
+      "name": "Health and Beauty",
+      "currency": "€",
+      "amount": 138,
+      "color": "rgb(216,140,253)"
+    },
+    {
+      "id": 5,
+      "name": "Alcohol",
+      "currency": "€",
+      "amount": 56,
+      "color": "rgb(255,70,107)"
+    },
+    {
+      "id": 6,
+      "name": "Мусор",
+      "currency": "€",
+      "amount": 37,
+      "color": "rgb(120,119,119)"
+    },
+    {
+      "id": 7,
+      "name": "Быт",
+      "currency": "€",
+      "amount": 21,
+      "color": "rgb(211,132,83)"
+    },
+    {
+      "id": 8,
+      "name": "Одежда",
+      "currency": "€",
+      "amount": 212,
+      "color": "rgb(86,255,255)"
+    }
   ]
 }

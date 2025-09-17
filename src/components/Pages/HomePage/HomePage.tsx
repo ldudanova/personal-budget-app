@@ -1,5 +1,5 @@
 import BalanceInfo from "../../BalanceInfoBlock/BalanceInfo.tsx";
-import Card from "../../Cards/Card.tsx";
+import Card from "../../../UI/Cards/Card.tsx";
 import TransactionBlock from "../../TransactionBlock/TransactionBlock.tsx";
 import ExpensesByCategoriesChart from "./ExpensesByCategoriesChart.tsx";
 

@@ -1,36 +1,12 @@
 import {createAsyncThunk, createSlice, type PayloadAction} from "@reduxjs/toolkit";
-import type {TranArr, TransactionType} from "../types/TransactionType.ts";
-
-export interface Transaction {
-    id: number;
-    date?: string;       // ISO-строка или любая дата
-    name: string;
-    amount?: number;
-    currency?: string;
-    type: 'income' | 'expense';
-    category?: string;
-    details?: TransactionDetail[]; // массив деталей, опционально
-}
-
-export interface TransactionDetail {
-    name: string;
-    category: string;
-    qty: number;
-    pricePerUnit: number;
-    priceTotal: number;
-    discount: number;
-}
-
-interface TransactionState {
-    rawTransactions: Transaction[];
-    tranArr: TranArr[];
-    loading: boolean;
-    error?: string;
-}
+import {getYearMonthDayString} from "../helpers/dates.ts";
+import type {TransactionType} from "../types/TransactionType.ts";
+import type {Transaction} from "../types/Transaction.ts";
+import type {TransactionState} from "../types/TransactionState.ts";
 
 const initialState: TransactionState = {
     rawTransactions: [],
-    tranArr: [],
+    transactionsArray: [],
     loading: false,
     error: undefined,
 };
@@ -61,11 +37,17 @@ export const TransactionsSlice = createSlice({
                 state.loading = false;
                 state.rawTransactions = action.payload;
 
-                // Преобразуем данные в TranArr
+                // Преобразуем данные в transactionsArray
                 const grouped: { [date: string]: TransactionType[] } = {};
+
                 action.payload.forEach(tx => {
-                    if (!grouped[tx.date || ""]) grouped[tx.date || ""] = [];
-                    grouped[tx.date || ""].push({
+                    const date = new Date(tx.date || "");
+
+                    // Формат: "YYYY-MM-DD" — удобно для ключей группировки
+                    const dd = getYearMonthDayString(date);
+
+                    if (!grouped[dd || ""]) grouped[dd || ""] = [];
+                    grouped[dd || ""].push({
                         id: tx.id,
                         name: tx.name,
                         amount: tx.amount || 0,
@@ -76,7 +58,7 @@ export const TransactionsSlice = createSlice({
                     });
                 });
 
-                state.tranArr = Object.entries(grouped).map(([date, transactions], idx) => ({
+                state.transactionsArray = Object.entries(grouped).map(([date, transactions], idx) => ({
                     id: idx,
                     date,
                     currencyIncome: "€", // здесь можно рассчитать отдельно
@@ -97,6 +79,4 @@ export const TransactionsSlice = createSlice({
     },
 });
 
-
-// export const {  } = TransactionsSlice.actions;
 export default TransactionsSlice.reducer;
