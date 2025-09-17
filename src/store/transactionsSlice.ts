@@ -1,5 +1,5 @@
 import {createAsyncThunk, createSlice, type PayloadAction} from "@reduxjs/toolkit";
-import {getYearMonthDayString} from "../helpers/dates.ts";
+import {dateFormatYearMonthDayString} from "../helpers/date/format.ts";
 import type {TransactionType} from "../types/TransactionType.ts";
 import type {Transaction} from "../types/Transaction.ts";
 import type {TransactionState} from "../types/TransactionState.ts";
@@ -44,7 +44,7 @@ export const TransactionsSlice = createSlice({
                     const date = new Date(tx.date || "");
 
                     // Формат: "YYYY-MM-DD" — удобно для ключей группировки
-                    const dd = getYearMonthDayString(date);
+                    const dd = dateFormatYearMonthDayString(date);
 
                     if (!grouped[dd || ""]) grouped[dd || ""] = [];
                     grouped[dd || ""].push({

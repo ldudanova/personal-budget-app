@@ -1,39 +1,44 @@
 import {useEffect} from "react";
-import {format, isToday, isYesterday, parseISO} from "date-fns";
+import {useTranslation} from "react-i18next";
+import {isToday, isYesterday, parseISO} from "date-fns";
 import type {TranArr, TransactionType} from "../../types/TransactionType.ts";
 import {useAppDispatch, useAppSelector} from "../../store/store.ts";
 import {fetchTransactions} from "../../store/transactionsSlice.ts";
 import Card from "../../UI/Cards/Card.tsx";
+import {dateFormat} from "../../helpers/date/format.ts";
+import {useLocale} from "../../hooks/useLocale.ts";
 import {TransactionRow} from "./TransactionRow.tsx";
 
 export default function TransactionBlock() {
     const dispatch = useAppDispatch();
     const {transactionsArray, loading, error} = useAppSelector(state => state.transactions);
+    const locale = useLocale()
+    const { t } = useTranslation();
 
     useEffect(() => {
         dispatch(fetchTransactions());
     }, [dispatch]);
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
+    if (loading) return <p>{t("Loading")}...</p>;
+    if (error) return <p>{t("Error")}: {error}</p>;
 
     function formatTransactionDate(isoDate: string) {
         const date = parseISO(isoDate);
 
         if (isToday(date)) {
-            return `${format(date, 'MMM d')} Today`; // "Sep 6 Today"
+            return `${dateFormat(date, 'MMM d', locale.language)} ${t("today")}`; // "Sep 6 Today"
         }
         if (isYesterday(date)) {
-            return `${format(date, 'MMM d')} Yesterday`; // "Sep 5 Yesterday"
+            return `${dateFormat(date, 'MMM d', locale.language)} ${t("yesterday")}`; // "Sep 5 Yesterday"
         }
 
-        return `${format(date, 'MMM d EEE')}`; // "Sep 4 Thu"
+        return `${dateFormat(date, 'MMM d EEE', locale.language)}`; // "Sep 4 Thu"
     }
 
     return (
         <>
             <h2 className="text-2xl font-bold font-sans mb-4 px-2">
-                Transactions
+                {t("transactions")}
             </h2>
             <div className="h-[calc(100vh-250px)] overflow-hidden relative">
                 <div

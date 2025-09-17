@@ -1,7 +1,6 @@
 import BalanceInfo from "../../BalanceInfoBlock/BalanceInfo.tsx";
-import Card from "../../../UI/Cards/Card.tsx";
 import TransactionBlock from "../../TransactionBlock/TransactionBlock.tsx";
-import ExpensesByCategoriesChart from "./ExpensesByCategoriesChart.tsx";
+import ExpensesByCategoryChartBlock from "./ExpensesByCategoryChartBlock.tsx";
 
 export default function HomePage() {
     return (
@@ -14,12 +13,7 @@ export default function HomePage() {
                         <TransactionBlock/>
                     </div>
                     <div>
-                        <h2 className="text-2xl font-bold font-sans mb-4 px-2">Expenses by categories</h2>
-                        <Card className="max-w-lg pt-8">
-                            <div className={"flex justify-center relative h-fit max-h-fit lg:h-[calc(100vh-300px)] md:h-[calc(100vh-350px)]"}>
-                                <ExpensesByCategoriesChart/>
-                            </div>
-                        </Card>
+                        <ExpensesByCategoryChartBlock/>
                     </div>
                 </div>
             </div>

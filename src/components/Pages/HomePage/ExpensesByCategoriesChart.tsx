@@ -12,10 +12,12 @@ import {
 } from "chart.js";
 import {useAppDispatch, useAppSelector} from "../../../store/store.ts";
 import {type CategoriesSpentTotal, fetchCategoriesSpentTotal} from "../../../store/categoriesSlice.ts";
+import {useTranslation} from "react-i18next";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function ExpensesByCategoriesChart() {
+    const {t} = useTranslation();
     const dispatch = useAppDispatch();
     const {categoriesSpentTotal, loading, error} = useAppSelector(state => state.categoriesSpentTotal);
 
@@ -23,11 +25,10 @@ export default function ExpensesByCategoriesChart() {
         dispatch(fetchCategoriesSpentTotal());
     }, [dispatch]);
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
+    if (loading) return <p>{t("loading")}...</p>;
+    if (error) return <p>{t("error")}: {error}</p>;
 
     const groupedData = groupTopCategories(categoriesSpentTotal, 5);
-
 
     function groupTopCategories(
         data: CategoriesSpentTotal[],

@@ -1,0 +1,17 @@
+{
+  "title": "My Budget App",
+  "income": "Income",
+  "expense": "Expense",
+  "expenses": "Expenses",
+  "balance": "Balance",
+  "Today": "Today",
+  "Yesterday": "Yesterday",
+  "error": "Error",
+  "loading": "Loading",
+  "transactions": "Transactions",
+  "expenses_by_categories": "Expenses by categories",
+
+
+  "spent_on": "You spent {{amount}} on {{category}}",
+  "add_transaction": "Add Transaction"
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Мой бюджет",
+  "income": "Доход",
+  "expense": "Расход",
+  "expenses": "Расходы",
+  "balance": "Баланс",
+  "today": "Сегодня",
+  "yesterday": "Вчера",
+  "error": "Ошибка",
+  "loading": "Загрузка",
+  "transactions": "Движение средств",
+  "expenses_by_categories": "Траты по категориям",
+
+
+  "spent_on": "Вы потратили {{amount}} на {{category}}",
+  "add_transaction": "Добавить транзакцию"
+}
