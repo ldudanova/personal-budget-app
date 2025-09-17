@@ -1,45 +1,35 @@
-import BalanceInfoCardDesktop from "./BalanceInfoCardDesktop.tsx";
+import {useEffect} from "react";
 import type {BalanceInfoType} from "../../types/BalanceInfoType.ts";
+import {useAppDispatch, useAppSelector} from "../../store/store.ts";
+import {fetchBalanceInfo} from "../../store/balanceInfoSlice.ts";
+import BalanceInfoCardDesktop from "./BalanceInfoCardDesktop.tsx";
 import BalanceInfoMobile from "./BalanceInfoMobile.tsx";
 
 export default function BalanceInfo() {
 
-    const balanceInfos: Array<BalanceInfoType> = [
-        {
-            id: 1,
-            name: "Balance",
-            icon: "",
-            amount: 1950.50,
-            percent: 7,
-        },
-        {
-            id: 2,
-            name: "Income",
-            icon: "↑",
-            amount: 4000,
-            percent: 0,
-        },
-        {
-            id: 3,
-            name: "Expenses",
-            icon: "↓",
-            amount: 3050.50,
-            percent: -2,
-        },
-    ];
+    const dispatch = useAppDispatch();
+    const {balanceInfo, loading, error} = useAppSelector(state => state.balanceInfo);
+
+    useEffect(() => {
+        dispatch(fetchBalanceInfo());
+    }, [dispatch]);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error}</p>;
 
     return (<>
         <div className="hidden md:grid grid-cols-3 gap-5 w-full h-auto py-6 border-gray-400">
-            {balanceInfos.map((balanceInfo: BalanceInfoType) => (
+            {balanceInfo.map((balanceInfo: BalanceInfoType) => (
                     <BalanceInfoCardDesktop key={balanceInfo.id}
                                             title={balanceInfo.name}
                                             amount={balanceInfo.amount}
-                                            percent={balanceInfo.percent}/>
+                                            percent={balanceInfo.diffPrevMonth}
+                                            currency={balanceInfo.currency}/>
                 )
             )}
         </div>
         <div className="block md:hidden py-4">
-           <BalanceInfoMobile balanceInfos={balanceInfos}/>
+            <BalanceInfoMobile balanceInfos={balanceInfo}/>
         </div>
     </>)
 }

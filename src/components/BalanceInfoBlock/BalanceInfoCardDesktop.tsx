@@ -4,10 +4,11 @@ type Props = {
     title: string,
     amount: number,
     percent: number,
+    currency: string,
 }
 
 export default function BalanceInfoCardDesktop(props: Props) {
-    const {title, amount, percent} = props
+    const {title, amount, percent, currency} = props
     return (
         <Card className="max-w-lg">
             <div className="flex justify-between items-center mb-3">
@@ -15,7 +16,7 @@ export default function BalanceInfoCardDesktop(props: Props) {
                 <div className="text-xs">{percent > 0? '+' : ''}{percent}%</div>
             </div>
             <div className="mb-1 text-xl font-bold font-sans">
-                $ {amount.toFixed(2)}
+                {currency} {amount.toFixed(2)}
             </div>
             <div className="text-xs">
 

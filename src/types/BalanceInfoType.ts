@@ -2,6 +2,7 @@ export type BalanceInfoType = {
     id: number,
     name: string,
     amount: number,
-    percent: number,
-    icon: string,
+    currency: string,
+    diffPrevMonth: number,
+    icon?: string,
 }

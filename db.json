@@ -1,4 +1,27 @@
 {
+  "balanceInfo": [
+    {
+      "id": 1,
+      "name": "Balance",
+      "amount": 1586.92,
+      "currency": "€",
+      "diffPrevMonth": 33.41
+    },
+    {
+      "id": 2,
+      "name": "Income",
+      "amount": 4125.78,
+      "currency": "€",
+      "diffPrevMonth": 1
+    },
+    {
+      "id": 3,
+      "name": "Expenses",
+      "amount": 2972.64,
+      "currency": "€",
+      "diffPrevMonth": -6.84
+    }
+  ],
   "transactions": [
     {
       "id": 1,
