@@ -13,10 +13,10 @@ export default function HomePage() {
                     <div className="md:col-span-2">
                         <TransactionBlock/>
                     </div>
-                    <div className="">
+                    <div>
                         <h2 className="text-2xl font-bold font-sans mb-4 px-2">Expenses by categories</h2>
                         <Card className="max-w-lg pt-8">
-                            <div className={"flex justify-center relative h-fit md:h-[calc(100vh-300px)]"}>
+                            <div className={"flex justify-center relative h-fit max-h-fit lg:h-[calc(100vh-300px)] md:h-[calc(100vh-350px)]"}>
                                 <ExpensesByCategoriesChart/>
                             </div>
                         </Card>
