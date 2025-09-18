@@ -1,10 +1,19 @@
 import {useTranslation} from "react-i18next";
-import {ToggleButton} from "../../UI/Buttons/ToggleButton.tsx";
+import {useLocation, useNavigate} from "react-router-dom";
 import ThemeToggle from "../../UI/Buttons/ThemeToggle.tsx";
 import LangToggle from "../../UI/Buttons/LangToggle.tsx";
 
 export function SidePanelDesktop() {
     const {t} = useTranslation();
+    const navigate = useNavigate();
+    const location = useLocation(); // текущий путь
+
+
+    const goTo = (path: string) => {
+        if (location.pathname !== path) {
+            navigate(path);
+        }
+    };
 
     return (
         <div className="bg-white border-r-2 border-gray-200 pr-8 pb-8 w-xs">
@@ -13,26 +22,30 @@ export function SidePanelDesktop() {
                 {t("general")}
             </div>
             <div className="mb-8">
-                <div
-                    className="flex rounded-tr-lg rounded-br-lg pl-8 py-4 font-bold text-gray-600 hover:text-shadow-violet-600 hover:bg-violet-100 cursor-pointer transition-colors duration-200">
+                <button type={"button"}
+                        className="flex w-full rounded-tr-lg rounded-br-lg pl-8 py-4 font-bold text-gray-600 hover:text-shadow-violet-600 hover:bg-violet-100 cursor-pointer transition-colors duration-200"
+                        onClick={() => goTo("/")}>
                     <div className="icon"></div>
                     <div>{t("dashboard")}</div>
-                </div>
-                <div
-                    className="flex rounded-tr-lg rounded-br-lg pl-8 py-4 font-bold text-gray-600 hover:text-shadow-violet-600 hover:bg-violet-100 cursor-pointer transition-colors duration-200">
+                </button>
+                <button type={"button"}
+                        className="flex w-full rounded-tr-lg rounded-br-lg pl-8 py-4 font-bold text-gray-600 hover:text-shadow-violet-600 hover:bg-violet-100 cursor-pointer transition-colors duration-200"
+                        onClick={() => goTo("/accounts")}>
                     <div className="icon"></div>
                     <div>{t("accounts")}</div>
-                </div>
-                <div
-                    className="flex rounded-tr-lg rounded-br-lg pl-8 py-4 font-bold text-gray-600 hover:text-shadow-violet-600 hover:bg-violet-100 cursor-pointer transition-colors duration-200">
+                </button>
+                <button type={"button"}
+                        className="flex w-full rounded-tr-lg rounded-br-lg pl-8 py-4 font-bold text-gray-600 hover:text-shadow-violet-600 hover:bg-violet-100 cursor-pointer transition-colors duration-200"
+                onClick={() => goTo("/analytics")}>
                     <div className="icon"></div>
                     <div>{t("analytics")}</div>
-                </div>
-                <div
-                    className="flex rounded-tr-lg rounded-br-lg pl-8 py-4 font-bold text-gray-600 hover:text-shadow-violet-600 hover:bg-violet-100 cursor-pointer transition-colors duration-200">
+                </button>
+                <button type={"button"}
+                        className="flex w-full rounded-tr-lg rounded-br-lg pl-8 py-4 font-bold text-gray-600 hover:text-shadow-violet-600 hover:bg-violet-100 cursor-pointer transition-colors duration-200"
+                onClick={() => goTo("/budget-planner")}>
                     <div className="icon"></div>
                     <div>{t("budget_planner")}</div>
-                </div>
+                </button>
 
             </div>
 
@@ -43,16 +56,16 @@ export function SidePanelDesktop() {
             </div>
 
             <div className="mb-8">
-                <div
-                    className="flex rounded-tr-lg rounded-br-lg pl-8 py-4 font-bold text-gray-600 hover:text-shadow-violet-600 hover:bg-violet-100 cursor-pointer transition-colors duration-200">
+                <button type={"button"}
+                        className="flex w-full rounded-tr-lg rounded-br-lg pl-8 py-4 font-bold text-gray-600 hover:text-shadow-violet-600 hover:bg-violet-100 cursor-pointer transition-colors duration-200">
                     <div className="icon"></div>
                     <div>{t("settings")}</div>
-                </div>
-                <div
-                    className="flex rounded-tr-lg rounded-br-lg pl-8 py-4 font-bold text-gray-600 hover:text-shadow-violet-600 hover:bg-violet-100 cursor-pointer transition-colors duration-200">
+                </button>
+                <button type={"button"}
+                        className="flex w-full rounded-tr-lg rounded-br-lg pl-8 py-4 font-bold text-gray-600 hover:text-shadow-violet-600 hover:bg-violet-100 cursor-pointer transition-colors duration-200">
                     <div className="icon"></div>
                     <div>{t("members")}</div>
-                </div>
+                </button>
             </div>
 
             <div className="pl-8 mb-8">

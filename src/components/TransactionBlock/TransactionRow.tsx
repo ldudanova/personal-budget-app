@@ -38,32 +38,6 @@ export function TransactionRow(props: Props) {
                                         : `-${transaction.currency}${-(transaction.budgetLeft)}`}
                                 </div>)}
                         </div>
-                        {/*        Chevron */}
-                        {/*        <div className="flex items-center justify-center pl-4">
-                            <div className="w-4 h-4">
-                        {transaction.details
-                            &&
-                                    <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"
-                                         transform="matrix(1, 0, 0, -1, 0, 0)rotate(270)">
-                                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round"
-                                           stroke-linejoin="round"></g>
-                                        <g id="SVGRepo_iconCarrier"><title>arrowhead-right</title>
-                                            <g id="Layer_2" data-name="Layer 2">
-                                                <g id="invisible_box" data-name="invisible box">
-                                                    <rect width="48" height="48" fill="none"></rect>
-                                                </g>
-                                                <g id="icons_Q2" data-name="icons Q2">
-                                                    <path
-                                                        d="M27.2,24,16.6,34.6a1.9,1.9,0,0,0,.2,3,2.1,2.1,0,0,0,2.7-.2l11.9-12a1.9,1.9,0,0,0,0-2.8l-11.9-12a2.1,2.1,0,0,0-2.7-.2,1.9,1.9,0,0,0-.2,3Z"></path>
-                                                </g>
-                                            </g>
-                                        </g>
-                                    </svg>
-
-                        }
-                            </div>
-                        </div>*/}
                     </div>
                 </div>
                 {!!transaction.details && transaction.details.length > 0
@@ -75,7 +49,7 @@ export function TransactionRow(props: Props) {
                 && (
                     <div className="pl-3 pt-2">
                         {/*TODO: подумать как лучше оформить скролл таблицы */}
-                        <div className="h-[calc(100vh-400px)] overflow-hidden relative">
+                        <div className="h-[calc(100vh-500px)] overflow-hidden relative">
                             <div className="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-violet-400 scrollbar-track-gray-100 rounded-lg relative">
                                 <TransactionRowDetailsTable details={transaction.details}/>
                             </div>
