@@ -1,4 +1,5 @@
 {
+  "general": "General",
   "title": "My Budget App",
   "income": "Income",
   "expense": "Expense",
@@ -8,8 +9,19 @@
   "Yesterday": "Yesterday",
   "error": "Error",
   "loading": "Loading",
+  "tools": "Tools",
   "transactions": "Transactions",
   "expenses_by_categories": "Expenses by categories",
+
+  "dashboard": "Dashboard",
+  "accounts": "Accounts",
+  "analytics": "Analytics",
+  "budget_planner": "Budget Planner",
+
+  "settings": "Settings",
+  "members": "Members",
+
+  "language": "Language",
 
 
   "spent_on": "You spent {{amount}} on {{category}}",

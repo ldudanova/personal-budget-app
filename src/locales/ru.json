@@ -1,4 +1,5 @@
 {
+  "general": "Основное",
   "title": "Мой бюджет",
   "income": "Доход",
   "expense": "Расход",
@@ -8,8 +9,17 @@
   "yesterday": "Вчера",
   "error": "Ошибка",
   "loading": "Загрузка",
+  "tools": "Интсрументы",
   "transactions": "Движение средств",
   "expenses_by_categories": "Траты по категориям",
+
+  "dashboard": "Обзор",
+  "accounts": "Счета",
+  "analytics": "Аналитика",
+  "budget_planner": "Бюджет",
+
+  "language": "Язык",
+
 
 
   "spent_on": "Вы потратили {{amount}} на {{category}}",
