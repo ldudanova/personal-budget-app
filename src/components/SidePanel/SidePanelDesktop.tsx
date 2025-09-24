@@ -36,13 +36,13 @@ export function SidePanelDesktop() {
                 </button>
                 <button type={"button"}
                         className="flex w-full rounded-tr-lg rounded-br-lg pl-8 py-4 font-bold text-gray-600 hover:text-shadow-violet-600 hover:bg-violet-100 cursor-pointer transition-colors duration-200"
-                onClick={() => goTo("/analytics")}>
+                        onClick={() => goTo("/analytics")}>
                     <div className="icon"></div>
                     <div>{t("analytics")}</div>
                 </button>
                 <button type={"button"}
                         className="flex w-full rounded-tr-lg rounded-br-lg pl-8 py-4 font-bold text-gray-600 hover:text-shadow-violet-600 hover:bg-violet-100 cursor-pointer transition-colors duration-200"
-                onClick={() => goTo("/budget-planner")}>
+                        onClick={() => goTo("/budget-planner")}>
                     <div className="icon"></div>
                     <div>{t("budget_planner")}</div>
                 </button>
